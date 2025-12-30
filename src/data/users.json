@@ -1,0 +1,69 @@
+{
+  "users": [
+    {
+      "username": "admin",
+      "password": "admin123",
+      "userId": "admin",
+      "firstName": "quickbyte",
+      "lastName": "genc",
+      "role": "Admin",
+      "email": "quickbytegenc@cognizant.com",
+      "phone": "7567171234"
+    },
+    {
+      "username": "customer",
+      "password": "customer123",
+      "userId": "customer",
+      "firstName": "quickbyte",
+      "lastName": "genc",
+      "role": "customer",
+      "email": "customer@cognizant.com",
+      "phone": "6567171234",
+      "id": "2"
+    },
+    {
+      "username": "customer1",
+      "password": "customer123",
+      "userId": "customer1",
+      "firstName": "quickbyte",
+      "lastName": "genc",
+      "role": "customer",
+      "email": "customer@cognizant.com",
+      "phone": "2567171234",
+      "id": "3"
+    },
+    {
+      "username": "user",
+      "password": "user123",
+      "userId": "user",
+      "firstName": "quickbyte",
+      "lastName": "genc",
+      "role": "user",
+      "email": "customer@cognizant.com",
+      "phone": "2567171234",
+      "id": "4"
+    },
+    {
+      "username": "demouser",
+      "password": "demouser123",
+      "userId": "demouser",
+      "firstName": "quickbyte",
+      "lastName": "genc",
+      "role": "customer",
+      "email": "demouser@cognizant.com",
+      "phone": "3567171234",
+      "id": "5"
+    },
+    {
+      "username": "crusiemate",
+      "password": "genc123",
+      "userId": "genuser",
+      "firstName": "crusiemate",
+      "lastName": "user",
+      "role": "customer",
+      "email": "crusiemate@cognizant.com",
+      "phone": "3567171234",
+      "id": "6"
+    }
+  ]
+}

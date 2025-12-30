@@ -1,0 +1,37 @@
+{
+  "usersprofile": [
+    {
+      "username": "Mayuresh Kiran",
+      "password": "user123",
+      "email": "mayureshkiran.naik@cognizant.com",
+      "firstName": "Mayuresh Kiran",
+      "lastName": "Naik",
+      "role": "Customer",
+      "phone": "9876543210",
+      "profileImage": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAQUlEQVR4nO3BAQ0AAADCoPdPbQ8HFAAAAAAAAAAAAAAAAAAAAAAAAAAAAPD/5+sAAAHVa4rXAAH1c0pWAAAAAElFTkSuQmCC",
+      "id": "1"
+    },
+    {
+      "username": "Mayuresh Kiran",
+      "password": "user123",
+      "email": "mayureshkiran.naik@cognizant.com",
+      "firstName": "Mayuresh Kiran",
+      "lastName": "Naik",
+      "role": "Customer",
+      "phone": "9876543210",
+      "profileImage": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAQUlEQVR4nO3BAQ0AAADCoPdPbQ8HFAAAAAAAAAAAAAAAAAAAAAAAAAAAAPD/5+sAAAHVa4rXAAH1c0pWAAAAAElFTkSuQmCC",
+      "id": "2"
+    },
+    {
+      "username": "Mayuresh Kiran",
+      "password": "user123",
+      "email": "mayureshkiran.naik@cognizant.com",
+      "firstName": "Mayuresh Kiran",
+      "lastName": "Naik",
+      "role": "Customer",
+      "phone": "9876543210",
+      "profileImage": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFUlEQVR42mNk+M9Qz0AEYBxVSF+FAAhKDveksOjmAAAAAElFTkSuQmCC",
+      "id": "3"
+    }
+  ]
+}

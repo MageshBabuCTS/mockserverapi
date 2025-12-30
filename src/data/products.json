@@ -1,0 +1,42 @@
+{
+  "products": [
+    {
+      "id": 101,
+      "model": "UPC00001",
+      "name": "Samsung Mobile S25",
+      "imageUrl": "https://images.unsplash.com/photo-1738830234395-a351829a1c7b?w=150",
+      "description": "Introducing our most powerful processor, customised for Galaxy. With improved real-time ray tracing and Vulkan optimization, dive deep into the action with ultra-smooth gameplay thanks to Snapdragon® 8 Elite Mobile Platform for Galaxy."
+    },
+    {
+      "model": "UPC00001",
+      "description": "Introducing our most powerful processor, customised for Galaxy. With improved real-time ray tracing and Vulkan optimization, dive deep into the action with ultra-smooth gameplay thanks to Snapdragon® 8 Elite Mobile Platform for Galaxy.",
+      "name": "Samsung Mobile S25",
+      "imageUrl": "https://images.unsplash.com/photo-1738830234395-a351829a1c7b?w=150",
+      "id": "2"
+    },
+    {
+      "model": "UPC00017",
+      "name": "Samsung Mobile S21",
+      "imageUrl": "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9",
+      "price": 910,
+      "description": "photo-1511707171634-5f897ff02aa9",
+      "id": "3"
+    },
+    {
+      "model": "UPC00025",
+      "name": "Samsung Mobile S26",
+      "imageUrl": "https://images.unsplash.com/photo-1546054454-aa26e2b734c7",
+      "price": 1010,
+      "description": "New Mobile with latest inbuilt with  with AI ",
+      "id": "4"
+    },
+    {
+      "model": "UPC00026",
+      "name": "Samsung Mobile S26",
+      "imageUrl": "https://images.unsplash.com/photo-1546054454-aa26e2b734c7",
+      "price": 1010,
+      "description": "Samsung Mobile S26",
+      "id": "5"
+    }
+  ]
+}

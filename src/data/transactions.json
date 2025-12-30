@@ -1,0 +1,14 @@
+{
+    "transactions": [
+        {
+            "id": 1,
+            "type": "sell",
+            "amount": 100
+        },
+        {
+            "id": 2,
+            "type": "buy",
+            "amount": 200
+        }
+    ]
+}
