@@ -48,17 +48,17 @@ const { loginResponses, profileResponses } = require('./responses');
 const apiHandlers = {
   'auth/login': (req, res) => {
     const { username, password } = req.body;
-    console.log("username and password ",username,password);
+    console.log("username and password ", username, password);
     if (!username || !password || username.length <= 3 || password.length <= 6) {
       return res.status(400).jsonp(loginResponses.badRequest);
     }
-    const users = dbMap.users.get('users').value() || [];   
+    const users = dbMap.users.get('users').value() || [];
     const user = users.find(u => u.username === username && u.password === password);
-     console.log(loginResponses.success['jwt'],"users details ",user);
+    console.log(loginResponses.success['jwt'], "users details ", user);
 
     if (user) {
       // Use the success response constant and add the token dynamically
-      res.jsonp({ ...user, ['jwt']:loginResponses.success['jwt'] });
+      res.jsonp({ ...user, ['jwt']: loginResponses.success['jwt'] });
     } else {
       // Use the failure response constant
       res.status(401).jsonp(loginResponses.failure);
@@ -94,12 +94,12 @@ Object.entries(apiHandlers).forEach(([path, handler]) => {
 server.use((req, res, next) => {
   const resource = req.path.replace(`${API_PREFIX}/`, '').split('/')[0]; // e.g., 'products'
   if (!dbMap[resource]) return next(); // Skip if resource doesn't exist
-  
+  /* New  logic added   for filtering GET  end points */
   if (req.method === 'GET') {
     const pathParts = req.path.replace(`${API_PREFIX}/`, '').split('/');
     const resource = pathParts[0];
     const id = pathParts[1]; // This will be '1' in /products/1
-    
+
     // 1. If there is an ID in the URL (e.g., /api/v1/products/1)
     if (id) {
       const item = dbMap[resource].get(resource).find({ id: String(id) }).value();
@@ -109,13 +109,13 @@ server.use((req, res, next) => {
     // 2. If there are Query Params (e.g., /api/v1/products?category=electronics)
     const queryKeys = Object.keys(req.query);
     if (queryKeys.length > 0) {
-       let data = dbMap[resource].get(resource).value() || [];
-       data = data.filter(item => {
-         return queryKeys.every(key => String(item[key]).toLowerCase() === String(req.query[key]).toLowerCase());
-       });
-       return res.jsonp(data);
+      let data = dbMap[resource].get(resource).value() || [];
+      data = data.filter(item => {
+        return queryKeys.every(key => String(item[key]).toLowerCase() === String(req.query[key]).toLowerCase());
+      });
+      return res.jsonp(data);
     }
-    
+
     // 3. Otherwise, let the default router handle it (Standard list fetch)
     return next();
   }
@@ -141,7 +141,7 @@ server.use((req, res, next) => {
     try {
       // Update the resource in the correct JSON file
       const resourceData = dbMap[resource].get(resource);
-      const index = resourceData.findIndex(item=> String(item.id) === String(id)).value();
+      const index = resourceData.findIndex(item => String(item.id) === String(id)).value();
       //const index = resourceData.findIndex({ id }).value();
       if (index === -1) {
         return res.status(404).jsonp({ error: `${resource} not found` });
@@ -158,7 +158,7 @@ server.use((req, res, next) => {
     try {
       // Delete from the correct JSON file
       const resourceData = dbMap[resource].get(resource);
-     const index = resourceData.findIndex(item=> String(item.id) === String(id)).value();
+      const index = resourceData.findIndex(item => String(item.id) === String(id)).value();
       if (index === -1) {
         return res.status(404).jsonp({ error: `${resource} not found` });
       }

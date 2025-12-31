@@ -39,6 +39,17 @@ curl --location 'http://localhost:3000/api/v1/auth/login' \
 curl --location 'http://localhost:3000/api/v1/products'
 ```
 
+- Test the GET /products endpoint with query params:
+```
+http://localhost:3000/api/v1/products?price=1010'
+```
+
+- Test the specific  id GET /products endpoint:
+```
+curl --location 'http://localhost:3000/api/v1/products/2'
+```
+
+
 - Test the POST /products endpoint:
 ```
 curl --location 'http://localhost:3000/api/v1/products' \
@@ -82,3 +93,8 @@ curl --location 'http://localhost:3000/users'
 git archive --format=zip --output=mockserver.zip master
 ```
 
+This creates a temporary "commit" of your current working directory and archives it.
+
+```
+git archive --format=zip -o mockserver.zip $(git stash create)
+```
