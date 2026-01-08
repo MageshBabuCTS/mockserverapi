@@ -1,0 +1,16 @@
+{
+  "phases": [
+    {
+      "totalParticpants": 25,
+      "phasedescription": "BP device",
+      "trialId": "1",
+      "id": "1"
+    },
+    {
+      "totalParticpants": 25,
+      "phasedescription": "BP device",
+      "trialId": "1",
+      "id": "2"
+    }
+  ]
+}

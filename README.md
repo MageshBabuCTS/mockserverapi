@@ -87,6 +87,46 @@ curl --location --request DELETE 'http://localhost:3000/api/v1/products/101' \
 curl --location 'http://localhost:3000/users'
 ```
 
+## sampple curl  for nested REST resources /trails/9/phases/2
+
+- Test Nested POST  
+
+```bash
+curl --location 'http://localhost:3000/api/v1/trials/1/phases' \
+--header 'accept: */*' \
+--header 'Content-Type: application/json' \
+--data '{
+    "totalParticpants": 25,
+    "phasedescription": "BP device",
+    "trialId":1
+}'
+```
+
+- Test Nested PUT  
+
+```bash
+curl --location --request PUT 'http://localhost:3000/api/v1/trials/1/phases/1' \
+--header 'accept: */*' \
+--header 'Content-Type: application/json' \
+--data '{
+    "totalParticpants": 25,
+    "phasedescription": "BP device nested phase 1",
+    "trialId":1
+}'
+```
+
+- Test Nested GET  
+
+```bash
+curl --location 'http://localhost:3000/api/v1/trials/1/phases/1'
+```
+
+- Test Nested DELETE  
+
+```bash
+curl --location --request DELETE 'http://localhost:3000/api/v1/trials/1/phases/3'
+```
+
 ## To generate  zip file
 
 ```

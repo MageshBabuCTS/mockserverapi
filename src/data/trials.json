@@ -1,0 +1,12 @@
+{
+  "trials": [
+    {
+      "model": "SIEM00001",
+      "name": "Siemens",
+      "imageUrl": "https://images.unsplash.com/photo-1738830234395-a351829a1c7b?w=150",
+      "price": 100,
+      "description": "BP device",
+      "id": "1"
+    }
+  ]
+}
