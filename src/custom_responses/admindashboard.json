@@ -1,0 +1,54 @@
+{
+  "summary_widgets": {
+    "total_revenue": {
+      "value": 154500.00,
+      "currency": "USD",
+      "trend": "+12%",
+      "label": "Total Success Revenue",
+      "source_query": "SELECT SUM(amount) FROM payment_transaction WHERE status = 'SUCCESS'"
+    },
+    "occupancy_rate": {
+      "value": 84.5,
+      "unit": "percentage",
+      "status": "high",
+      "label": "Average Fleet Occupancy",
+      "source_query": "SELECT ROUND((COUNT(booking_id) / SUM(capacity)) * 100, 2) FROM cruise_trip JOIN cruise_ship..."
+    },
+    "pending_receivables": {
+      "value": 12450.00,
+      "currency": "USD",
+      "count": 5,
+      "label": "Pending Payments",
+      "source_query": "SELECT SUM(total_price - paid) FROM cabin_booking WHERE status = 'CONFIRMED'"
+    },
+    "active_passengers": {
+      "value": 1250,
+      "label": "Current Onboard Guests",
+      "source_query": "SELECT COUNT(user_id) FROM user_role WHERE role_id = (SELECT role_id FROM app_role WHERE role_name = 'PASSENGER')"
+    }
+  },
+  "charts": {
+    "revenue_by_cabin": {
+      "type": "pie",
+      "labels": ["Standard Interior", "Deluxe Balcony", "Royal Penthouse"],
+      "series": [45000, 85000, 24500],
+      "source_query": "SELECT ct.display_name, SUM(pt.amount) FROM cabin_type ct JOIN ... GROUP BY ct.cabin_type_id"
+    },
+    "service_demand": {
+      "type": "bar",
+      "labels": ["Dining", "Spa", "Excursion", "Entertainment"],
+      "series": [450, 210, 340, 120],
+      "source_query": "SELECT service_type, COUNT(*) FROM activity_schedule GROUP BY service_type"
+    },
+    "booking_trends": {
+      "type": "line",
+      "labels": ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+      "series": [110, 145, 230, 400, 550, 720],
+      "source_query": "SELECT MONTHNAME(created_at), COUNT(*) FROM cabin_booking GROUP BY MONTH(created_at)"
+    }
+  },
+  "top_performers": [
+    { "name": "Aatif Khan", "spend": 5799.00, "tier": "SILVER" },
+    { "name": "Maya Vasudevan", "spend": 4500.00, "tier": "BRONZE" }
+  ]
+}

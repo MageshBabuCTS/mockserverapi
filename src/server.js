@@ -54,6 +54,7 @@ server.use(middlewares);
 server.use(jsonServer.bodyParser);
 
 const { loginResponses, profileResponses } = require('./responses');
+const admindashRes = require('./custom_responses/admindashboard.json');
 
 // Custom API handlers (Auth/Profile)
 const apiHandlers = {
@@ -71,10 +72,7 @@ const apiHandlers = {
             res.status(401).jsonp(loginResponses.failure);
         }
     },
-    'profiles': (req, res) => {
-        // const { parentId } = extractPathParams(req);
-        //const profileId = req.parentResource.parentId ;
-        console.log("profileId",req)
+    'profiles': (req, res) => {      
         
         const userProfile = db.users ? db.users[0] : null;
         if (userProfile) {
@@ -82,9 +80,12 @@ const apiHandlers = {
         } else {
             res.status(404).jsonp(profileResponses.failure);
         }
+    },
+    'summary' : (req,res) => {
+        return res.jsonp(admindashRes);
     }
 };
-
+//During server  startup  this routes  get registered
 Object.entries(apiHandlers).forEach(([path, handler]) => {
     const fullPath = `${API_PREFIX}/${path}`;
     path === 'auth/login' ? server.post(fullPath, handler) : server.get(fullPath, handler);
@@ -93,7 +94,7 @@ Object.entries(apiHandlers).forEach(([path, handler]) => {
 
 
 
-
+//
 /**
  * CORE LOGIC: Nested Resource Handler & CRUD Middleware
  */
